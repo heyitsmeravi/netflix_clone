@@ -16,7 +16,7 @@ const Player = () => {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNDBhZWJjMjZmNDQ1MDYyY2Q5ZmY0ZmU5YTJmZTdlZSIsIm5iZiI6MTc4OTQ4NTg2Ni43OTMsInN1YiI6IjZhYTk2MzJhMjFmZTdlNjdmNzU3OWNiYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cEvid3PdWUH22zKCJEfQoF6Euxc1L2O9JxkXw9yUtSQ'
+    Authorization: `Bearer ${import.meta.env.VITE_TMDB_API_READ_ACCESS_TOKEN}`
   }
 };
 useEffect(() =>{
@@ -32,7 +32,7 @@ useEffect(() =>{
       <iframe height="90%" width="90%" src={`https://www.youtube.com/embed/${apiData.key}`}   title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <div className="player-info">
         <p>{apiData.name}</p>
-        <p>{apiData.published_at}</p>
+        <p>{apiData.published_at.split('T')[0]}</p>
         <p>{apiData.type}</p>
       </div>
     </div>
