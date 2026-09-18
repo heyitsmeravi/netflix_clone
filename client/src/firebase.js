@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, sendPasswordResetEmail, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { toast } from "react-toastify";
 const firebaseConfig = {
@@ -43,4 +43,15 @@ const signout = () => {
     signOut(auth);
 }
 
-export {auth,db,signup,signin,signout};
+const resetPassword = async(email) => {
+    try{
+        await sendPasswordResetEmail(auth,email);
+        toast.success("Password reset link sent to your email");
+        return true;
+    }catch(error){
+        console.log(error);
+        toast.error(error.code.split('/')[1].split('-').join(' '));
+        return false;
+    }
+}   
+export {auth,db,signup,signin,signout,resetPassword};

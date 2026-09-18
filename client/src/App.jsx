@@ -7,6 +7,7 @@ import {onAuthStateChanged} from 'firebase/auth';
 import { useEffect } from 'react';
 import {auth} from '../src/firebase'
 import {ToastContainer,toast} from 'react-toastify';
+import ForgetPass from './pages/ForgetPass/ForgetPass';
 const App = () => {
   const navigate = useNavigate();
   useEffect( ()=>{
@@ -27,6 +28,7 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/player/:id' element={<Player/>}/>
+        <Route path='/login-help' element={<ForgetPass/>}/>
       </Routes>
     </div>
   )

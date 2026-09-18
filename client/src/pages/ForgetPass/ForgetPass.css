@@ -1,0 +1,44 @@
+.forgetpass{
+    height:100vh;
+    background: linear-gradient(#0000007e,#0000007e), url(/background_banner.jpg);
+    padding:20px;
+}
+.forgetpass-form{
+    width:100%;
+    max-width:450px;
+    background:rgba(0,0,0,0.75);
+    border-radius:4px;
+    padding: 60px;
+    margin:auto;
+}
+.forgetpass-logo{
+    width:150px;
+}
+.forgetpass-form input{
+    height:50px;
+    width:100%;
+    background: #333;
+    border:0;
+    color:white;
+    margin:12px 0;
+    border-radius:4px;
+    padding: 16px 20px;
+    font-size:16px;
+    font-weight:500;
+}
+.forgetpass-form input::placeholder{
+    font-size:16px;
+    font-weight:500;
+}
+.forgetpass-form button{
+    width:100%;
+    border:0;
+    outline:0;
+    padding:16px;
+    background:#e50914;
+    color:white;
+    border-radius:4px;
+    font-size:16px;
+    margin-top:20px;
+    cursor:pointer;
+}
